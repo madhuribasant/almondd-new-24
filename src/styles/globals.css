@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+html.lenis {
+  height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+.text, .anim-text,.anim{
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.modal{
+  translate: -100% 0;
+}
+
+@layer components{
+  .italic-text{
+    @apply font-playfair italic  mx-3 font-medium;
   }
+  .list{
+    @apply relative ml-1;
+  }
+  #item{
+    @apply absolute top-0 left-0 text-white text-3xl align-middle;
+  }
+
+.card{
+  @apply flex flex-col h-auto w-96 ;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.card-header{
+  @apply bg-red-500;
+}
+
+  /* .intro-text{
+    @apply 
+  } */
 }
