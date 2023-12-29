@@ -38,7 +38,7 @@ export const CallToAction = () => {
 
                 <div className="overflow-y-hidden">
                     <span className="uppercase anim">
-                        We'd love to
+                        Wed love to
                     </span>
                     <span className="italic-text anim">
                         work
@@ -49,8 +49,10 @@ export const CallToAction = () => {
                 </div>
             </h1>
             <Image src="/meme.png" alt="CTA meme" width="300" height="300" />
-            <Modal setShowModal={setShowModal} showModal={showModal} />
-            <button onClick={()=>setShowModal(!showModal)} className="bg-red-500 text-2xl uppercase px-4 py-3 rounded-full">Lets Connect</button>
+            <div >
+                <Modal setShowModal={setShowModal} showModal={showModal} />
+            </div>
+            <button onClick={() => setShowModal(!showModal)} className="bg-red-500 text-2xl uppercase px-4 py-3 rounded-full">Lets Connect</button>
         </div>
     )
 }

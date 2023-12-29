@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import localFont from 'next/font/local'
+
 
 
 
@@ -9,9 +9,9 @@ export default function Document() {
       <Head />
       <body>
         <Main />
-        <div id="modal-root" />
         <NextScript />
       </body>
+        <div id="modal-root" />
     </Html>
   )
 }

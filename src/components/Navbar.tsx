@@ -42,7 +42,7 @@ export const Navbar = () => {
                 <li className='uppercase text-white'><a href="#work">Work</a></li>
             </ul>
 
-            <button className='bg-red-500 text-white rounded-full px-6 py-3 uppercase'>Let's Connect</button>
+            <button className='bg-red-500 text-white rounded-full px-6 py-3 uppercase'>Lets Connect</button>
         </nav>
     )
 }

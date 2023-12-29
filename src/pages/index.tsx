@@ -6,7 +6,7 @@ import { ReactLenis } from '@studio-freight/react-lenis'
 
 import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { ElementRef, useEffect, useRef } from 'react'
 import { Navbar } from '@/components/Navbar'
 import { Services } from '@/components/Services'
 import { Clients } from '@/components/Clients'
@@ -40,7 +40,7 @@ const playFair = Playfair_Display({
 
 
 export default function Home() {
-
+  
   const { pathname } = useRouter()
 
   useEffect(() => {
@@ -50,14 +50,17 @@ export default function Home() {
 
   return (
     <div className={`${gtfont.variable} ${playFair.variable} font-gt`}>
-      <ReactLenis root options={{ lerp: 0.1, duration: 2.5, smoothTouch: true }}>
-        <Navbar />
-        {/* <ScrollSection /> */}
-        <ScrollProblemSection />
-        <Services />
-        <Clients/>
-        <Testimonial/>
-        <CallToAction/>
+      <ReactLenis root options={{ lerp: 0.1, duration: 2.5, smoothTouch: true, className:"h-auto" }}>
+
+       
+          <Navbar />
+          <ScrollSection />
+          <ScrollProblemSection />
+          <Services />
+          <Clients />
+          <Testimonial />
+          <CallToAction />
+        
       </ReactLenis>
     </div>
   )

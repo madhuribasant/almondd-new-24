@@ -145,14 +145,6 @@ export const ScrollSection = () => {
                 <div ref={containerRef} className="flex w-[300vw] h-screen">
 
                     <section ref={elem => elem && sectionRef.current.push(elem)} className="sec1 pin w-screen h-screen flex flex-col justify-center items-start bg-redpink text-darkpink px-28 space-y-3">
-                        {/* <filter>
-                            <feTurbulence
-                            
-                                type='fractalNoise'
-                                baseFrequency='0.65'
-                                numOctaves='3'
-                                stitchTiles='stitch' />
-                        </filter> */}
                         <span className="font-extrabold text-9xl uppercase intro-text overflow-hidden">Hello</span>
                         <span className="font-extrabold text-9xl uppercase intro-text overflow-hidden">There :)</span>
                     </section>
