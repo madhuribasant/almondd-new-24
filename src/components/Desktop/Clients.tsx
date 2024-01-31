@@ -5,9 +5,11 @@ import Image from "next/image";
 export const Clients = () => {
     const splideRef = useRef<ElementRef<'section'>>(null)
     useEffect(() => {
-        const splide = new Splide('.splide', {
+        if (!splideRef.current) return
+
+        const splide = new Splide(splideRef?.current, {
             type: "loop",
-            ease:"linear",
+            ease: "linear",
             drag: true,
             autoWidth: true,
             gap: 30,

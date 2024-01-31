@@ -73,8 +73,10 @@ export const ScrollProblemSection = () => {
         </div>
         <div className='flex items-center justify-between  border-lightpink h-screen relative'>
           <span className='text-xl text-lightpink w-32'>How reliable are they?</span>
-          <span className='border p-2 rounded-full'>1</span>
-          <span className="w-full h-[2px] bg-lightpink absolute mt-32"></span>
+          <svg width="44" height="44" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.9055 27.375C14.7388 27.375 13.0721 26.8583 11.9055 25.825C10.7555 24.7917 10.1805 23.3167 10.1805 21.4H14.2555C14.2555 22.3 14.4888 22.9917 14.9555 23.475C15.4388 23.9583 16.1138 24.2 16.9805 24.2C17.7138 24.2 18.2971 24 18.7305 23.6C19.1805 23.2 19.4055 22.6667 19.4055 22C19.4055 20.4833 18.5138 19.725 16.7305 19.725H15.0305V16.625H16.7555C18.3555 16.625 19.1555 15.9333 19.1555 14.55C19.1555 13.9667 18.9555 13.5 18.5555 13.15C18.1555 12.8 17.6305 12.625 16.9805 12.625C16.2305 12.625 15.6388 12.8417 15.2055 13.275C14.7721 13.6917 14.5555 14.275 14.5555 15.025H10.5555C10.5555 13.3917 11.1388 12.0833 12.3055 11.1C13.4721 10.1167 15.0638 9.625 17.0805 9.625C18.9305 9.625 20.4138 10.05 21.5305 10.9C22.6471 11.75 23.2055 12.9 23.2055 14.35C23.2055 16.2833 22.1638 17.5417 20.0805 18.125C21.1471 18.325 21.9805 18.7833 22.5805 19.5C23.1971 20.2167 23.5055 21.1083 23.5055 22.175C23.5055 23.725 22.8971 24.9833 21.6805 25.95C20.4805 26.9 18.8888 27.375 16.9055 27.375Z" fill="#FFD4F1" />
+                        <circle cx="17.3706" cy="18.1469" r="17.0244" stroke="#FFD4F1" stroke-width="0.69253" />
+                    </svg>
         </div>
         <div className='flex items-center justify-between  border-lightpink h-screen relative'>
           <span className='text-lg text-lightpink w-56'>Are they ready to deliver results under rapid changes and tight deadlines?</span>

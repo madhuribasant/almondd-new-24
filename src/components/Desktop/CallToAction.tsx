@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
-import { Modal } from "./Modal"
+import { Modal } from "../shared/Modal"
 export const CallToAction = () => {
     const [showModal, setShowModal] = useState(false)
     gsap.registerPlugin(ScrollTrigger)

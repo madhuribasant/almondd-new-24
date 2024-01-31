@@ -30,7 +30,9 @@ const config: Config = {
         "goldyellow":"#FFBC89",
         "lightyellow":"#FFEA4A",
         "coralgreen":"#B7E2EF",
-        "lightblack":"#1C1C1C"
+        "lightblack":"#1C1C1C",
+        "darkred":"#A91E31",
+        "olive":"#3C3318"
       }
     },
 

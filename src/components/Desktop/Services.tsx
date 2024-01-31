@@ -32,7 +32,7 @@ export const Services = () => {
         <>
             <section ref={sectionRef} id="services" className="h-screen flex flex-col items-center justify-center py-6 bg-violet">
                 <h1 className="text-goldyellow text-8xl px-20 overflow-hidden">
-                    <div className="  overflow-y-hidden">
+                    <div className=" overflow-y-hidden">
                         <span className="uppercase anim-text ">You can</span>
                     </div>
 

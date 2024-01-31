@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+
+
+
 body.lenis {
   height: auto;
 }
@@ -72,10 +75,9 @@ body.lenis {
 
 
 
-
 @layer components{
   .italic-text{
-    @apply font-playfair italic  mx-3 font-medium;
+    @apply font-playfair italic  mx-3 font-semibold;
   }
   .list{
     @apply relative ml-1;
