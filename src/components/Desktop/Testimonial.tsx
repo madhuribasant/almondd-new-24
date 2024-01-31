@@ -1,5 +1,6 @@
 import { TestimonialType } from "@/types"
 import { PortableText } from "@portabletext/react"
+import Image from "next/image"
 import { ReactNode, useState } from "react"
 
 
@@ -59,7 +60,7 @@ export const Testimonial = ({ testimonialsData}: { testimonialsData: Testimonial
                             />
                             <div className="flex items-center gap-2">
 
-                                <img className="w-10 h-10" src={data.imageUrl} alt={data.name} />
+                                <Image className="w-10 h-10" width={30} height={30} src={data.imageUrl} alt={data.name} />
                                 <div>
 
                                     <h1 className="font-bold">{data.name}</h1>

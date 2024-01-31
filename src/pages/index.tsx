@@ -5,11 +5,10 @@ import React, { ElementRef, useEffect, useRef } from 'react'
 
 import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
-import { CallToAction, Clients, Navbar, ScrollProblemSection, ScrollSection, Services, Testimonial, Works } from '@/components/Desktop/Index'
+import { CallToAction, Navbar, ScrollProblemSection, ScrollSection,  Services, Testimonial, Works } from '@/components/Desktop/Index'
 import type { TestimonialType, WorksType } from '@/types'
 
 import { client } from '@/utils/sanity'
-import { matches } from '@splidejs/splide/src/js/utils'
 import { MobileCallToAction, MobileClient, MobileNavbar, MobileTestimonial, OverlappingSections, ProblemSection, ServicesMobile } from '@/components/Mobile/Index'
 
 
@@ -52,7 +51,7 @@ const Desktop = (props: any) => {
       <ScrollProblemSection />
       <Works worksData={props.data[1]} />
       <Services />
-      <Clients />
+      {/* <Clients /> */}
       <Testimonial testimonialsData={props.data[0]} />
       <CallToAction />
     </>
@@ -88,8 +87,6 @@ export default function Home(props: any) {
   
 
 
-
-  console.log(matches)
 
   return (
     <main className={`${gtfont.variable} ${playFair.variable} font-gt font-bold`}>

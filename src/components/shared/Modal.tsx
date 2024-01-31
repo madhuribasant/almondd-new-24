@@ -118,7 +118,7 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
                         connect?
                     </span>
                     <br/>
-                    We'd love to 
+                    We&apos;d love to 
                     <span className="italic-text lowercase">
                     work
                     </span>

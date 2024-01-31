@@ -9,7 +9,7 @@ export const ProblemSection = () => {
                     <span className="italic-text capitalize">
                         So,
                     </span>
-                    Don't get <br /> worried about
+                    Don&apos;t get <br /> worried about
                 </h1>
 
                 <svg width="24" height="61" viewBox="0 0 24 61" fill="#FFD4F1" xmlns="http://www.w3.org/2000/svg">
