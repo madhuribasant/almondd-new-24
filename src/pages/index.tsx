@@ -1,11 +1,11 @@
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Poppins } from 'next/font/google'
 
 import { ReactLenis } from '@studio-freight/react-lenis'
 import React, { ElementRef, useEffect, useRef } from 'react'
 
 import localFont from 'next/font/local'
 import { useRouter } from 'next/router'
-import { CallToAction, Navbar, ScrollProblemSection, ScrollSection,  Services, Testimonial, Works } from '@/components/Desktop/Index'
+import { CallToAction, Navbar, Clients, ScrollProblemSection, ScrollSection, Services, Testimonial, Works } from '@/components/Desktop/Index'
 import type { TestimonialType, WorksType } from '@/types'
 
 import { client } from '@/utils/sanity'
@@ -41,6 +41,11 @@ const playFair = Playfair_Display({
   display: "swap"
 })
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
 
 
 const Desktop = (props: any) => {
@@ -51,7 +56,7 @@ const Desktop = (props: any) => {
       <ScrollProblemSection />
       <Works worksData={props.data[1]} />
       <Services />
-      {/* <Clients /> */}
+      <Clients />
       <Testimonial testimonialsData={props.data[0]} />
       <CallToAction />
     </>
@@ -84,13 +89,23 @@ export default function Home(props: any) {
 
 
 
-  
+
 
 
 
   return (
-    <main className={`${gtfont.variable} ${playFair.variable} font-gt font-bold`}>
-     
+    <main className={`${gtfont.variable} ${playFair.variable}  font-gt font-bold`}>
+      <style jsx global>{`
+        .f-gt{
+          font-family: ${gtfont.style.fontFamily};
+        }
+        .f-pf{
+          font-family: ${playFair.style.fontFamily};
+        }
+        .f-pop{
+          font-family: ${poppins.style.fontFamily};
+        }
+      `}</style>
       <ReactLenis root options={{ lerp: 0.1, duration: 2.5, smoothTouch: true, className: "h-auto" }}>
         <div className='hidden md:block'>
           <Desktop data={props.data} />

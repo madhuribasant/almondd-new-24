@@ -39,14 +39,14 @@ const Carousel = ({ data }: { data: TestimonialType[] }) => {
     };
 
     return (
-        <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <div className='f-pop font-medium' style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
             <div style={{ display: 'flex', transition: 'transform 0.5s', transform: `translateX(-${currentIndex * 100}%)`, width: "300vw" }}>
                 {data.map((item, index) => (
                     <div key={index} className='min-w-full h-[300px] p-3 text-lightpink'>
                         <div className='flex flex-col items-center  w-96  text-black '>
                             <Image src={item.imageUrl} alt={item.name} width={50} height={50} />
                             <h1 className='text-lightpink'>{item.name}</h1>
-                            <h3 className='text-lightpink'>{item.designation}</h3>
+                            <h3 className='text-lightpink text-center'>{item.designation}</h3>
 
                             
                             <PortableText

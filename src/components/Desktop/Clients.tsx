@@ -1,33 +1,10 @@
-// import Splide from "@splidejs/splide";
+
 import { ElementRef, useEffect, useRef } from "react"
-// import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
 import Image from "next/image";
 export const Clients = () => {
     const splideRef = useRef<ElementRef<'section'>>(null)
-    // useEffect(() => {
-    //     if (!splideRef.current) return
-
-    //     const splide = new Splide(splideRef?.current, {
-    //         type: "loop",
-    //         ease: "linear",
-    //         drag: true,
-    //         autoWidth: true,
-    //         gap: 30,
-    //         pagination: false,
-    //         arrows: false,
-    //         padding: 30,
-    //         autoHeight: true,
-    //         speed: 3000,
-    //         autoScroll: {
-    //             speed: 1,
-    //             pauseOnHover: true,
-    //             rewind: true
-    //         },
-    //     });
-    //     // Mount the Splide instance
-    //     splide.mount({ AutoScroll });
-    // }, [])
-
+   
     return (
         <section className="h-screen flex flex-col justify-around bg-lightyellow overflow-x-hidden">
             <h1 className=" self-center text-6xl">

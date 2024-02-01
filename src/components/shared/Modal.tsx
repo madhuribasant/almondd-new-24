@@ -6,16 +6,18 @@ import Select from "react-select"
 import makeAnimated from 'react-select/animated';
 import emailjs from "@emailjs/browser";
 
+
 interface ModalProps {
     setShowModal: (value: SetStateAction<boolean>) => void
-    showModal: boolean
+    showModal: boolean,
+    modalTimeline: gsap.core.Timeline
 }
 
 
 const animatedComponents = makeAnimated();
 
-export const Modal = ({ setShowModal, showModal }: ModalProps) => {
-    const [modalTimeline] = useState(gsap.timeline({ paused: true }))
+export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) => {
+
     const [modalRoot, setModalRoot] = useState<HTMLElement>()
     const [selectedOption, setSelectedOption] = useState<any>();
     const [selectCompany, setSelectCompany] = useState<any>()
@@ -87,8 +89,6 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
 
     }, [])
 
-
-
     useEffect(() => {
         if (!modalRoot) return
 
@@ -101,9 +101,19 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
         }).reverse()
     }, [showModal])
 
+
+
     useEffect(() => {
+        if (!showModal) return
+
         modalTimeline.reversed(!showModal)
     }, [showModal])
+
+
+    const closeModal = () => {
+        modalTimeline.reverse();
+        gsap.delayedCall(modalTimeline.duration(), () => setShowModal(!showModal));
+    };
 
 
 
@@ -111,25 +121,26 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
 
     const ModalElement = (
 
-        <div className=" modal bg-violet fixed top-0 left-0 z-20 h-screen overflow-y-auto w-full font-gt " data-lenis-prevent>
+        <div className=" modal bg-violet fixed top-0 left-0 z-20 h-screen overflow-y-auto w-full f-gt" data-lenis-prevent>
+          
             <div className="flex justify-between items-center p-3">
-                <h1 className="text-3xl text-center text-goldyellow font-bold uppercase mx-auto"> Ready to
-                    <span className="italic-text lowercase">
+                <h1 className="text-3xl text-center text-goldyellow font-bold  uppercase mx-auto"> Ready to
+                    <span className="italic-text lowercase f-pf">
                         connect?
                     </span>
-                    <br/>
-                    We&apos;d love to 
-                    <span className="italic-text lowercase">
-                    work
+                    <br />
+                    We&apos;d love to
+                    <span className="italic-text lowercase f-pf">
+                        work
                     </span>
-                    <br/>
-                     with you </h1>
+                    <br />
+                    with you </h1>
 
-                <button onClick={() => setShowModal(!showModal)}><svg xmlns="http://www.w3.org/2000/svg" height="52" width="48" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" /></svg></button>
+                <button onClick={() => closeModal()}><svg xmlns="http://www.w3.org/2000/svg" height="52" width="48" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" /></svg></button>
             </div>
 
 
-            <div className="modal-content mt-3 flex flex-col space-y-5 justify-evenly mx-5 md:mx-20 overflow-y-auto py-6">
+            <div className="modal-content f-gt font-semibold mt-3 flex flex-col space-y-5 justify-evenly mx-5 md:mx-20 overflow-y-auto py-6">
                 <label className="grid" htmlFor="company">
                     <span className="text-goldyellow text-md md:text-xl">Name of your company:</span>
                     <input id="company" name="name" type="text" className="bg-transparent text-white placeholder:text-white border-b-2 border-goldyellow  outline-none focus:outline-none active:outline-none text-md md:text-xl" value={name} onChange={handleChange} />
@@ -145,7 +156,13 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
                     <span className="text-goldyellow text-md md:text-xl">Company Domain:</span>
                     <Select
                         options={domainOptions}
-
+                        unstyled
+                        classNames={{
+                            input: () => "[&_input:focus]:ring-0 text-goldyellow border-b-2 p-2 border-goldyellow",
+                            control: () => "bg-transparent text-goldyellow",
+                            menu: () => "bg-black/30 backdrop-blur-lg text-goldyellow",
+                            option: () => "p-3 "
+                        }}
                         value={selectCompany}
                         onChange={(data) => setSelectCompany(data)}
                         isSearchable={true}
@@ -156,6 +173,13 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
                 <label htmlFor="">
                     <span className="text-goldyellow text-md md:text-xl">Services your are looking for*</span>
                     <Select
+                        unstyled
+                        classNames={{
+                            input: () => "[&_input:focus]:ring-0 text-goldyellow",
+                            control: () => "bg-transparent text-goldyellow border-b-2 p-2 border-goldyellow",
+                            menu: () => "bg-black/30 backdrop-blur-lg text-goldyellow",
+                            option: () => "p-3 "
+                        }}
                         options={servicesOptions}
                         value={selectedOption}
                         onChange={(data) => setSelectedOption(data)}
@@ -163,6 +187,8 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
                         isMulti={true}
                         className="bg-transparent"
                     />
+
+
 
                 </label>
 
@@ -199,5 +225,5 @@ export const Modal = ({ setShowModal, showModal }: ModalProps) => {
 
 
 
-    return modalRoot ? ReactDOM.createPortal(ModalElement, modalRoot) : <></>
+    return showModal ? (modalRoot ? ReactDOM.createPortal(ModalElement, modalRoot) : <></>) : <></>
 }

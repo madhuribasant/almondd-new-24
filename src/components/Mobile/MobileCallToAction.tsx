@@ -1,9 +1,12 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Modal } from "../shared/Modal"
+import gsap from "gsap"
 
 export const MobileCallToAction = () => {
     const [showModal, setShowModal] = useState(false)
+    const [modalTimeline] = useState(gsap.timeline({ paused: true }))
+
     return (
         <div id="cta" className="h-screen bg-lightblack text-white flex flex-col justify-center items-center space-y-10">
             <h1 className=" text-4xl text-center">
@@ -28,7 +31,7 @@ export const MobileCallToAction = () => {
             </h1>
             <Image src="/meme.png" alt="CTA meme" width="300" height="300" />
             <div >
-                <Modal setShowModal={setShowModal} showModal={showModal} />
+                <Modal modalTimeline={modalTimeline} setShowModal={setShowModal} showModal={showModal} />
             </div>
             <button onClick={() => setShowModal(!showModal)} className="bg-lightpink text-black text-2xl uppercase px-4 py-3 rounded-full">Lets Connect</button>
         </div>

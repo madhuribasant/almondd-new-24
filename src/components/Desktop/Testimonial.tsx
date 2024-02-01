@@ -46,7 +46,7 @@ export const Testimonial = ({ testimonialsData}: { testimonialsData: Testimonial
                         </span>
                     </div>
                 </h1>
-                <div className="self-center grid grid-cols-3 grid-flow-dense gap-3 ">
+                <div className="self-center grid grid-cols-3 grid-flow-dense gap-3 f-pop ">
                     {testimonialsData.map((data, index) => (
 
                         <div className=" w-96 h-auto  border border-gray-200 p-5 shadow-md " key={index}>

@@ -5,6 +5,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import { Modal } from "../shared/Modal"
 export const CallToAction = () => {
     const [showModal, setShowModal] = useState(false)
+    const modalTimeline = gsap.timeline({ paused: true })
     gsap.registerPlugin(ScrollTrigger)
 
 
@@ -27,8 +28,8 @@ export const CallToAction = () => {
     }, [])
     return (
 
-        <div id="cta" className="h-screen bg-lightblack text-white flex flex-col justify-center items-center space-y-10">
-            <h1 className=" text-4xl text-center">
+        <div id="cta" className="h-screen bg-lightblack flex flex-col justify-center items-center space-y-10">
+            <h1 className=" text-4xl text-center text-lightpink">
                 <div className="overflow-y-hidden">
                     <span className="italic-text anim">
                         Ready
@@ -50,9 +51,9 @@ export const CallToAction = () => {
             </h1>
             <Image src="/meme.png" alt="CTA meme" width="300" height="300" />
             <div >
-                <Modal setShowModal={setShowModal} showModal={showModal} />
+                <Modal setShowModal={setShowModal} showModal={showModal} modalTimeline={modalTimeline} />
             </div>
-            <button onClick={() => setShowModal(!showModal)} className="bg-red-500 text-2xl uppercase px-4 py-3 rounded-full">Lets Connect</button>
+            <button onClick={() => setShowModal(!showModal)} className="bg-lightpink text-2xl text-black uppercase px-4 py-3 rounded-full">Lets Connect</button>
         </div>
     )
 }
