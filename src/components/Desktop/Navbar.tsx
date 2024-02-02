@@ -5,27 +5,27 @@ import { useEffect } from 'react'
 
 export const Navbar = () => {
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const showAnim = gsap.from('.nav', {
-            y: -200,
-            // margin:-10,
-            paused: true,
-            duration: 0.8,
-            ease: "expo"
-        }).progress(1);
+    //     const showAnim = gsap.from('.nav', {
+    //         y: -200,
+    //         // margin:-10,
+    //         paused: true,
+    //         duration: 0.8,
+    //         ease: "expo"
+    //     }).progress(1);
 
-        ScrollTrigger.create({
-            start: "top top",
-            end: 99999,
-            onUpdate: (self) => {
-                self.direction === -1 ? showAnim.play() : showAnim.reverse()
-            }
-        });
+    //     ScrollTrigger.create({
+    //         start: "top top",
+    //         end: 99999,
+    //         onUpdate: (self) => {
+    //             self.direction === -1 ? showAnim.play() : showAnim.reverse()
+    //         }
+    //     });
 
 
 
-    }, [])
+    // }, [])
 
     return (
         <nav className='nav bg-white/5 border right-0 left-0 rounded-full p-2 px-6 py-3  mx-32 mt-5 border-white fixed z-10 flex justify-between items-center'>

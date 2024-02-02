@@ -18,7 +18,7 @@ export const ScrollSection = () => {
     useEffect(() => {
 
         let introTexts: HTMLElement[] = gsap.utils.toArray(".intro-text")
-        let items: HTMLElement[] = gsap.utils.toArray("#item")
+        let items: HTMLElement[] = gsap.utils.toArray(".item")
 
         let main = gsap.timeline({
             defaults: {
@@ -128,15 +128,15 @@ export const ScrollSection = () => {
 
     return (
         <>
-            <div ref={overlayRef} className="overlays font-gt flex justify-center items-center h-screen bg-yellow z-20 fixed w-screen">
-                <h1 className="text-3xl text-white flex gap-2">Almondd for
+            <div ref={overlayRef} className="overlays font-gt flex justify-center items-center h-screen bg-lightpink z-20 fixed w-screen">
+                <h1 className="text-4xl text-pink-700 flex gap-2">Almondd for
                 </h1>
-                <div className="list h-10 p-2">
+                <div className="list h-10 leading-4 mx-1  p-2">
 
-                    <span id="item">Startups</span>
-                    <span id="item">Business</span>
-                    <span id="item">MVPS</span>
-                    <span id="item">All</span>
+                    <span className="item">Startups</span>
+                    <span className="item">Business</span>
+                    <span className="item">MVPS</span>
+                    <span className="item">All</span>
                 </div>
             </div>
 

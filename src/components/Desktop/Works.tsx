@@ -32,7 +32,7 @@ export const Works = ({ worksData }: { worksData: WorksType[] }) => {
 
   return (
     <section id="work" className="bg-white flex flex-col p-10 h-auto">
-      <h1 className="self-center text-3xl text-center mb-12  ">
+      <h1 className="self-center text-4xl text-center mb-12  ">
         <div className="overflow-y-hidden">
           <span className="uppercase a">Our team is </span>
           <span className="italic-text a">

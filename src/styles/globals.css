@@ -82,8 +82,8 @@ body.lenis {
   .list{
     @apply relative ml-1;
   }
-  #item{
-    @apply absolute top-0 left-0 text-white text-3xl align-middle;
+  .item{
+    @apply absolute top-0 left-0 text-pink-700 text-4xl align-middle;
   }
 
 .card{
