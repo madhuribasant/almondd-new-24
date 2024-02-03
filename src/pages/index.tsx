@@ -32,18 +32,21 @@ const gtfont = localFont({
     }
   ],
   variable: '--font-gt',
+  preload:true
 })
 
 const playFair = Playfair_Display({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-pf',
-  display: "swap"
+  display: "swap",
+  preload:true
 })
 
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+  preload:true
 });
 
 
@@ -94,8 +97,8 @@ export default function Home(props: any) {
 
 
   return (
-    <main className={`${gtfont.variable} ${playFair.variable}  font-gt font-bold`}>
-      <style jsx global>{`
+    <>
+     <style jsx global>{`
         .f-gt{
           font-family: ${gtfont.style.fontFamily};
         }
@@ -106,7 +109,9 @@ export default function Home(props: any) {
           font-family: ${poppins.style.fontFamily};
         }
       `}</style>
-      <ReactLenis root options={{ lerp: 0.1, duration: 2.5, smoothTouch: true, className: "h-auto" }}>
+    <main className={`${gtfont.variable} ${playFair.variable}  font-gt font-bold`}>
+     
+      <ReactLenis root options={{ lerp: 0.1, duration: 2, smoothTouch: true, className: "h-auto" }}>
         <div className='hidden md:block'>
           <Desktop data={props.data} />
         </div>
@@ -116,6 +121,7 @@ export default function Home(props: any) {
 
       </ReactLenis>
     </main>
+    </>
   )
 }
 

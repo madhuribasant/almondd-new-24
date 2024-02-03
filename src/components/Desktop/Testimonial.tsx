@@ -35,7 +35,7 @@ export const Testimonial = ({ testimonialsData}: { testimonialsData: Testimonial
     return (
         <>
             <section className="h-auto py-10 flex flex-col justify-around overflow-x-hidden font-normal">
-                <h1 className="self-center font-bold text-3xl mb-12">
+                <h1 className="self-center font-bold text-4xl mb-12">
                     <div className="overflow-y-hidden">
                         <span className="uppercase">HEAR FROM OUR</span>
                         <span className="italic-text">
@@ -49,7 +49,7 @@ export const Testimonial = ({ testimonialsData}: { testimonialsData: Testimonial
                 <div className="self-center grid grid-cols-3 grid-flow-dense gap-3 f-pop ">
                     {testimonialsData.map((data, index) => (
 
-                        <div className=" w-96 h-auto  border border-gray-200 p-5 shadow-md " key={index}>
+                        <div className=" w-96 h-auto  border border-gray-200 p-5 rounded-md" key={index}>
                             <PortableText
                                 value={data.message}
                                 components={{

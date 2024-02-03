@@ -144,9 +144,9 @@ export const ScrollSection = () => {
 
                 <div ref={containerRef} className="flex w-[300vw] h-screen">
 
-                    <section ref={elem => elem && sectionRef.current.push(elem)} className="sec1 pin w-screen h-screen flex flex-col justify-center font-bold items-start bg-redpink text-darkpink px-20 md:px-28 space-y-3">
-                        <span className="font-extrabold text-7xl md:text-9xl uppercase intro-text overflow-hidden">Hello</span>
-                        <span className="font-extrabold text-7xl md:text-9xl uppercase intro-text overflow-hidden">There :)</span>
+                    <section ref={elem => elem && sectionRef.current.push(elem)} className="sec1 pin w-screen h-screen flex flex-col justify-center font-bold items-start bg-darkred text-darkpink px-20 md:px-28 space-y-3">
+                        <span className="font-extrabold text-7xl md:text-9xl uppercase intro-text overflow-hidden text-lightpink">Hello</span>
+                        <span className="font-extrabold text-7xl md:text-9xl uppercase intro-text overflow-hidden text-lightpink">There :)</span>
                     </section>
                     <section ref={elem => elem && sectionRef.current.push(elem)} className="sec2 pin w-screen h-screen flex flex-col justify-center font-bold items-start bg-black text-white px-12 md:px-28 space-y-6 ">
                         <div className="overflow-hidden">
@@ -183,7 +183,7 @@ export const ScrollSection = () => {
                         <div className="overflow-hidden">
                             <span className="text-white text-4xl md:text-8xl text">
                                 <span className="uppercase mx-3 ">
-                                    We have the
+                                    We have the best
                                 </span>
                                 <span className="italic-text">
                                     design

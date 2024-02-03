@@ -61,7 +61,7 @@ export const Services = () => {
 
             </section >
 
-            <section className="h-screen grid place-items-center">
+            <section className="h-screen bg-violet grid place-items-center">
                 <div className="flex space-x-6">
                     <Image src="/27.png" width="300" height="800" alt="branding" />
                     <Image src="/39.png" width="300" height="800" alt="Digital Products" />

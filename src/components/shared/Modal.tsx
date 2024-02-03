@@ -124,7 +124,7 @@ export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) =>
         <div className=" modal bg-violet fixed top-0 left-0 z-20 h-screen overflow-y-auto w-full f-gt" data-lenis-prevent>
           
             <div className="flex justify-between items-center p-3">
-                <h1 className="text-3xl text-center text-goldyellow font-bold  uppercase mx-auto"> Ready to
+                <h1 className="text-6xl text-center text-goldyellow font-bold  uppercase mx-auto"> Ready to
                     <span className="italic-text lowercase f-pf">
                         connect?
                     </span>
@@ -140,15 +140,15 @@ export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) =>
             </div>
 
 
-            <div className="modal-content f-gt font-semibold mt-3 flex flex-col space-y-5 justify-evenly mx-5 md:mx-20 overflow-y-auto py-6">
+            <div className="modal-content f-pop font-semibold mt-3 flex flex-col space-y-12 justify-evenly mx-5 md:mx-20 overflow-y-auto py-6">
                 <label className="grid" htmlFor="company">
                     <span className="text-goldyellow text-md md:text-xl">Name of your company:</span>
-                    <input id="company" name="name" type="text" className="bg-transparent text-white placeholder:text-white border-b-2 border-goldyellow  outline-none focus:outline-none active:outline-none text-md md:text-xl" value={name} onChange={handleChange} />
+                    <input id="company" name="name" type="text" className="bg-transparent text-white placeholder:text-white border-b-[1px] border-goldyellow/40 outline-none focus:outline-none active:outline-none text-md md:text-xl" value={name} onChange={handleChange} />
                 </label>
 
                 <label className="grid" htmlFor="email">
                     <span className="text-goldyellow text-md md:text-xl">Email:</span>
-                    <input type="email" name="email" className="bg-transparent placeholder:text-white text-white  border-b-2 border-goldyellow  outline-none focus:outline-none active:outline-none text-md md:text-xl" value={email} onChange={handleChange} />
+                    <input type="email" name="email" className="bg-transparent placeholder:text-white text-white  border-b-[1px] border-goldyellow/40  outline-none focus:outline-none active:outline-none text-md md:text-xl" value={email} onChange={handleChange} />
                 </label>
 
 
@@ -158,7 +158,7 @@ export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) =>
                         options={domainOptions}
                         unstyled
                         classNames={{
-                            input: () => "[&_input:focus]:ring-0 text-goldyellow border-b-2 p-2 border-goldyellow",
+                            input: () => "[&_input:focus]:ring-0 text-goldyellow border-b-[1px] p-2 border-goldyellow/40",
                             control: () => "bg-transparent text-goldyellow",
                             menu: () => "bg-black/30 backdrop-blur-lg text-goldyellow",
                             option: () => "p-3 "
@@ -176,7 +176,7 @@ export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) =>
                         unstyled
                         classNames={{
                             input: () => "[&_input:focus]:ring-0 text-goldyellow",
-                            control: () => "bg-transparent text-goldyellow border-b-2 p-2 border-goldyellow",
+                            control: () => "bg-transparent text-goldyellow border-b-[1px] p-2 border-goldyellow/40",
                             menu: () => "bg-black/30 backdrop-blur-lg text-goldyellow",
                             option: () => "p-3 "
                         }}
@@ -214,7 +214,7 @@ export const Modal = ({ setShowModal, showModal, modalTimeline }: ModalProps) =>
                     <span className="text-goldyellow text-md md:text-xl">
                         Message:
                     </span>
-                    <textarea name="message" className="text-white bg-transparent outline-none border-b-2 border-goldyellow " value={message} onChange={handleChange} id="mesasge" cols={30} rows={5}></textarea>
+                    <textarea name="message" className="text-white bg-transparent outline-none border-b-[1px] border-goldyellow/40 " value={message} onChange={handleChange} id="mesasge" cols={30} rows={5}></textarea>
                 </label>
 
                 <button className="py-3 md:py-6 px-3 md:px-6 font-bold bg-goldyellow text-md md:text-xl" onClick={handleSubmit}>Submit</button>

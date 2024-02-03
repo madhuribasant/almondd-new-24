@@ -29,7 +29,7 @@ export const CallToAction = () => {
     return (
 
         <div id="cta" className="h-screen bg-lightblack flex flex-col justify-center items-center space-y-10">
-            <h1 className=" text-4xl text-center text-lightpink">
+            <h1 className=" text-5xl text-center text-lightpink">
                 <div className="overflow-y-hidden">
                     <span className="italic-text anim">
                         Ready
@@ -39,7 +39,7 @@ export const CallToAction = () => {
 
                 <div className="overflow-y-hidden">
                     <span className="uppercase anim">
-                        Wed love to
+                        We&apos;d love to
                     </span>
                     <span className="italic-text anim">
                         work
